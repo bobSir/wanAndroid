@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -7,17 +7,15 @@ android {
     buildToolsVersion parent.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId parent.ext.applicationId
         minSdkVersion parent.ext.minSdkVersion
         targetSdkVersion parent.ext.targetSdkVersion
-        versionCode parent.ext.versionCode
-        versionName parent.ext.versionName
+
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -45,5 +43,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation project(path: ':p_common')
+    implementation parent.ext.kotlin_stdlib
+    implementation parent.ext.kotlin_core_ktx
+    implementation parent.ext.appcompat
+
 }

@@ -12,9 +12,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/base" />
-            <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/zlibutil" />
+            <option value="$PROJECT_DIR$/b_find" />
+            <option value="$PROJECT_DIR$/b_homepage" />
+            <option value="$PROJECT_DIR$/b_navgation" />
+            <option value="$PROJECT_DIR$/b_system" />
+            <option value="$PROJECT_DIR$/b_user" />
+            <option value="$PROJECT_DIR$/l_net" />
+            <option value="$PROJECT_DIR$/l_util" />
+            <option value="$PROJECT_DIR$/p_base" />
+            <option value="$PROJECT_DIR$/p_common" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
