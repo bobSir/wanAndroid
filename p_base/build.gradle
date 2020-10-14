@@ -46,4 +46,10 @@ dependencies {
     api parent.ext.kotlin_stdlib
     api parent.ext.kotlin_core_ktx
     api parent.ext.appcompat
+
+    api parent.ext.lifecycle_viewmodel
+    api parent.ext.lifecycle_runtime
+    api parent.ext.lifecycle_common_java8
+    api parent.ext.lifecycle_extensions
+    api parent.ext.lifecycle_livedata
 }
