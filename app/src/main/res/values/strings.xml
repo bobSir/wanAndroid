@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">wanAndroid</string>
+    <string name="home">首页</string>
+    <string name="system">体系</string>
+    <string name="discovery">发现</string>
+    <string name="navigation">导航</string>
+    <string name="mine">我的</string>
 </resources>
