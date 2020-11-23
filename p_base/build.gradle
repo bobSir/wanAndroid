@@ -53,4 +53,8 @@ dependencies {
     api parent.ext.lifecycle_common_java8
     api parent.ext.lifecycle_extensions
     api parent.ext.lifecycle_livedata
+
+    api parent.ext.unpeek_livedata
+    api parent.ext.smooth_navigation
+    api parent.ext.strict_databinding
 }

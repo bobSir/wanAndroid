@@ -55,6 +55,10 @@ allprojects {
         glide = "com.github.bumptech.glide:glide:4.11.0"
         glide_compiler = "com.github.bumptech.glide:compiler:4.11.0"
         gson = "com.google.code.gson:gson:2.8.6"
+
+        unpeek_livedata = "com.kunminx.archi:unpeek-livedata:3.2.3-beta10"
+        smooth_navigation = "com.kunminx.archi:smooth-navigation:3.3.2-beta5"
+        strict_databinding = "com.kunminx.archi:strict-databinding:3.3.2-beta2"
     }
 }
 
