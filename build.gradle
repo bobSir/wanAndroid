@@ -10,7 +10,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
+        //cc
+        classpath 'com.billy.android:cc-register:1.1.2' //使用最新版
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -46,6 +47,9 @@ allprojects {
         lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata:2.2.0"
         navigation = "androidx.navigation:navigation-runtime:2.2.1"
 
+        hilt = "com.google.dagger:hilt-android:2.28.3-alpha"
+        hilt_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
+
         work_runtime = "androidx.work:work-runtime:$work_version"
         work_runtime_ktx = "androidx.work:work-runtime-ktx:$work_version"
         work_rxjava2 = "androidx.work:work-rxjava2:$work_version"
@@ -58,6 +62,7 @@ allprojects {
         glide_compiler = "com.github.bumptech.glide:compiler:4.11.0"
         gson = "com.google.code.gson:gson:2.8.6"
 
+        // 开源jetPack封装库
         unpeek_livedata = "com.kunminx.archi:unpeek-livedata:3.2.3-beta10"
         smooth_navigation = "com.kunminx.archi:smooth-navigation:3.3.2-beta5"
         strict_databinding = "com.kunminx.archi:strict-databinding:3.3.2-beta2"

@@ -1,3 +1,6 @@
+ext.mainApp = true
+apply from: rootProject.file('cc-settings-2.gradle')
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -44,6 +47,8 @@ android {
 }
 
 dependencies {
+    addComponent 'b_find'
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ':p_common')
 }

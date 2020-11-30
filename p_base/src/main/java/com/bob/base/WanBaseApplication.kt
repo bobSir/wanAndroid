@@ -1,20 +1,18 @@
 package com.bob.base
 
+import android.app.Application
 import androidx.lifecycle.ViewModelStore
-import com.kunminx.architecture.BaseApplication
+import dagger.hilt.android.HiltAndroidApp
 
 /**
  * created by cly on 2020/10/14
  */
-open class WanBaseApplication : BaseApplication() {
+@HiltAndroidApp
+open class WanBaseApplication : Application() {
 
     val mAppViewModelStore: ViewModelStore? = null
 
     override fun onCreate() {
         super.onCreate()
-    }
-
-    override fun getViewModelStore(): ViewModelStore {
-        return super.getViewModelStore()
     }
 }
