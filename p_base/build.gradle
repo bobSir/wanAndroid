@@ -47,6 +47,7 @@ dependencies {
     api parent.ext.kotlin_core_ktx
     api parent.ext.appcompat
     api parent.ext.material
+    api parent.ext.fragment
 
     api parent.ext.lifecycle_viewmodel
     api parent.ext.lifecycle_runtime
