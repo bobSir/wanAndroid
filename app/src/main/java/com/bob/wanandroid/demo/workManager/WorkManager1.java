@@ -4,8 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
+
+import com.bob.wanandroid.R;
+import com.bob.wanandroid.databinding.ActivityDatabindingDemoBinding;
+import com.bob.wanandroid.demo.databinding.User;
 
 /**
  * 特除服务
