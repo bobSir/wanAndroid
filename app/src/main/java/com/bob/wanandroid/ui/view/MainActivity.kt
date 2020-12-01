@@ -16,6 +16,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         fragments = mapOf(
+
         )
     }
 }

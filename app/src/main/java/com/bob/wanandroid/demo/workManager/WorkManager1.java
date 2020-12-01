@@ -2,6 +2,7 @@ package com.bob.wanandroid.demo.workManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.net.wifi.aware.PublishConfig;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
