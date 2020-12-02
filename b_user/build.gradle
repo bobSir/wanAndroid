@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply from: rootProject.file('cc-settings-2.gradle')
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -7,7 +7,6 @@ android {
     buildToolsVersion parent.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId parent.ext.applicationId
         minSdkVersion parent.ext.minSdkVersion
         targetSdkVersion parent.ext.targetSdkVersion
         versionCode parent.ext.versionCode
@@ -41,9 +40,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    resourcePrefix "user_"
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation project(path: ':p_common')
 }

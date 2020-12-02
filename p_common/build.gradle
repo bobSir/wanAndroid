@@ -1,4 +1,6 @@
-apply plugin: 'com.android.library'
+ext.alwaysLib = true
+apply from: rootProject.file('cc-settings-2.gradle')
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 

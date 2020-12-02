@@ -16,14 +16,13 @@ class ComponentFind : IComponent {
     }
 
     override fun onCall(cc: CC?): Boolean {
-        var actionName = cc?.actionName
-        when (actionName) {
+        when (cc?.actionName) {
             FindRouter.createFindFragment -> createFindFragment(cc);
         }
         return false
     }
 
     private fun createFindFragment(cc: CC?) {
-        CC.sendCCResult(cc?.callId, CCResult.successWithNoKey(DiscoveryFragment()))
+        CC.sendCCResult(cc?.callId, CCResult.successWithNoKey(DiscoveryFragment.newInstance()))
     }
 }
