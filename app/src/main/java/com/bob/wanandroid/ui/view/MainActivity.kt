@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import com.billy.cc.core.component.CC
+import com.billy.cc.core.component.CCResult
 import com.bob.base.ui.base.BaseActivity
 import com.bob.common.router.*
 import com.bob.wanandroid.R
@@ -34,6 +35,11 @@ class MainActivity : BaseActivity() {
 
             }
         }
+        if (savedInstanceState == null) {
+            val initialItemId = R.id.home
+            bnv.selectedItemId = initialItemId
+            showFragment(initialItemId)
+        }
     }
 
     private fun showFragment(itemId: Int) {
@@ -52,62 +58,52 @@ class MainActivity : BaseActivity() {
     }
 
     private fun createMineFragment(): Fragment? {
-        var fragment: Fragment? = null
-        CC.obtainBuilder(MineRouter.componentName)
+        val fragment: Fragment?
+        val call = CC.obtainBuilder(MineRouter.componentName)
             .setActionName(MineRouter.createMineFragment)
-            .build().callAsyncCallbackOnMainThread { _, result ->
-                if (result.isSuccess) {
-                    fragment = result.getDataItemWithNoKey()
-                }
-            }
+            .build()
+            .call()
+        fragment = call.getDataItemWithNoKey();
         return fragment
     }
 
     private fun createNavigationFragment(): Fragment? {
-        var fragment: Fragment? = null
-        CC.obtainBuilder(NavigationRouter.componentName)
+        val fragment: Fragment?
+        val call = CC.obtainBuilder(NavigationRouter.componentName)
             .setActionName(NavigationRouter.createNavigationFragment)
-            .build().callAsyncCallbackOnMainThread { _, result ->
-                if (result.isSuccess) {
-                    fragment = result.getDataItemWithNoKey()
-                }
-            }
+            .build()
+            .call()
+        fragment = call.getDataItemWithNoKey()
         return fragment
     }
 
     private fun createSystemFragment(): Fragment? {
-        var fragment: Fragment? = null
-        CC.obtainBuilder(SystemRouter.componentName)
+        val fragment: Fragment?
+        val call: CCResult = CC.obtainBuilder(SystemRouter.componentName)
             .setActionName(SystemRouter.createSystemFragment)
-            .build().callAsyncCallbackOnMainThread { _, result ->
-                if (result.isSuccess) {
-                    fragment = result.getDataItemWithNoKey()
-                }
-            }
+            .build()
+            .call()
+        fragment = call.getDataItemWithNoKey()
         return fragment
     }
 
     private fun createFindFragment(): Fragment? {
-        var fragment: Fragment? = null
-        CC.obtainBuilder(FindRouter.componentName)
+        val fragment: Fragment?
+        val call: CCResult = CC.obtainBuilder(FindRouter.componentName)
             .setActionName(FindRouter.createFindFragment)
-            .build().callAsyncCallbackOnMainThread { _, result ->
-                if (result.isSuccess) {
-                    fragment = result.getDataItemWithNoKey()
-                }
-            }
+            .build()
+            .call()
+        fragment = call.getDataItemWithNoKey()
         return fragment
     }
 
     private fun createHomeFragment(): Fragment? {
-        var fragment: Fragment? = null
-        CC.obtainBuilder(HomeRouter.componentName)
+        val fragment: Fragment?
+        val call = CC.obtainBuilder(HomeRouter.componentName)
             .setActionName(HomeRouter.componentHomeFragment)
-            .build().callAsyncCallbackOnMainThread { _, result ->
-                if (result.isSuccess) {
-                    fragment = result.getDataItemWithNoKey()
-                }
-            }
+            .build()
+            .call()
+        fragment = call.getDataItemWithNoKey()
         return fragment
     }
 }

@@ -5,7 +5,7 @@ package com.bob.common.router
  */
 class HomeRouter {
     companion object {
-        const val componentName = "com.bob.homepage.componentHome"
-        const val componentHomeFragment = "createHomeFragment"
+        const val componentName = "a"
+        const val componentHomeFragment = "b"
     }
 }

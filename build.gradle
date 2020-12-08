@@ -66,6 +66,8 @@ allprojects {
         unpeek_livedata = "com.kunminx.archi:unpeek-livedata:3.2.3-beta10"
         smooth_navigation = "com.kunminx.archi:smooth-navigation:3.3.2-beta5"
         strict_databinding = "com.kunminx.archi:strict-databinding:3.3.2-beta2"
+
+        xLog = "com.elvishew:xlog:1.7.2"
     }
 }
 
