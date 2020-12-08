@@ -1,5 +1,3 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bob.base">
+<manifest package="com.bob.base">
 
-    /
 </manifest>
