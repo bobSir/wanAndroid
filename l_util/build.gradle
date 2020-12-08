@@ -46,5 +46,5 @@ dependencies {
     implementation parent.ext.kotlin_stdlib
     implementation parent.ext.kotlin_core_ktx
     implementation parent.ext.appcompat
-
+    api parent.ext.xLog
 }

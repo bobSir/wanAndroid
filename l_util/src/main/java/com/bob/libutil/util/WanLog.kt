@@ -1,4 +1,4 @@
-package com.bob.common.util
+package com.bob.libutil.util
 
 import com.elvishew.xlog.LogConfiguration
 import com.elvishew.xlog.LogLevel

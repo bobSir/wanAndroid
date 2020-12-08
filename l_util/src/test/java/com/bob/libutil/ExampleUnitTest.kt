@@ -1,4 +1,4 @@
-package com.bob.zlibutil
+package com.bob.libutil
 
 import org.junit.Test
 

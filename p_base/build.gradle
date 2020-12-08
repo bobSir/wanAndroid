@@ -56,4 +56,6 @@ dependencies {
     api parent.ext.lifecycle_livedata
     api parent.ext.hilt
     api parent.ext.hilt_viewmodel
+
+    api project(path: ':l_util')
 }

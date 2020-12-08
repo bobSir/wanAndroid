@@ -48,7 +48,6 @@ dependencies {
     api parent.ext.work_runtime
     api parent.ext.work_rxjava2
     api parent.ext.work_gcm
-    api parent.ext.xLog
 
     api project(path: ':p_base')
 }
