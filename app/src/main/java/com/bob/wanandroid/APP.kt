@@ -1,7 +1,7 @@
 package com.bob.wanandroid
 
 import com.bob.base.WanBaseApplication
-import com.bob.common.util.WanLog
+import com.bob.libutil.util.WanLog
 
 /**
  * created by cly on 2020/10/14

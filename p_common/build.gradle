@@ -50,4 +50,6 @@ dependencies {
     api parent.ext.work_gcm
 
     api project(path: ':p_base')
+    api project(path: ':l_util')
+    api project(path: ':l_net')
 }

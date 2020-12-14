@@ -57,5 +57,5 @@ dependencies {
     api parent.ext.hilt
     api parent.ext.hilt_viewmodel
 
-    api project(path: ':l_util')
+    api parent.ext.xLog
 }
