@@ -43,5 +43,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation parent.ext.okHttp
+    implementation parent.ext.retrofit
+    implementation parent.ext.retrofit_gson
     api project(path: ':p_base')
 }
