@@ -22,14 +22,13 @@ class DebugActivity : AppCompatActivity() {
     }
 
     private fun threadTest() {
-        val threadTest = ThreadTest()
-        Thread(Runnable {
-            threadTest.test1()
-        }).start()
-
-        Thread(Runnable {
-            threadTest.test2    ()
-        }).start()
-
+//        val threadTest = ThreadTest()
+//        Thread {
+//            ThreadTest.test1()
+//        }.start()
+//
+//        Thread {
+//            threadTest.test2()
+//        }.start()
     }
 }
