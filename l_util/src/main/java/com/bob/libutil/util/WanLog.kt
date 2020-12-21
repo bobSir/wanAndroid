@@ -7,13 +7,24 @@ import com.elvishew.xlog.XLog
 /**
  * created by cly on 2020/12/8
  */
+fun logD(msg: Any) {
+    XLog.d(msg)
+}
 
 fun logD(tag: String, msg: Any) {
     XLog.tag(tag).d(msg)
 }
 
+fun logI(msg: Any) {
+    XLog.i(msg)
+}
+
 fun logI(tag: String, msg: Any) {
     XLog.tag(tag).i(msg)
+}
+
+fun logE(msg: Any) {
+    XLog.e(msg)
 }
 
 fun logE(tag: String, msg: Any) {

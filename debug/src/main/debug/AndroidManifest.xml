@@ -3,12 +3,17 @@
     package="com.bob.debug">
 
     <application
-        android:name="com.bob.base.WanBaseApplication"
+        android:name="com.bob.common.APP"
         android:icon="@mipmap/nabe_"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".DebugActivity"></activity>
-
+        <activity android:name=".DebugActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".netTest.NetTestActivity" />
     </application>
 
 </manifest>

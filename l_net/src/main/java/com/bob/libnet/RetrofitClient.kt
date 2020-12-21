@@ -1,6 +1,5 @@
 package com.bob.libnet
 
-import com.bob.libnet.business.ApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

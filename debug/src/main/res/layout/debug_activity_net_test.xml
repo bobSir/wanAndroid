@@ -7,14 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".DebugActivity">
+        tools:context=".netTest.NetTestActivity">
 
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/test1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="netTest" />
-
+            android:text="测试1" />
     </LinearLayout>
 
 </layout>

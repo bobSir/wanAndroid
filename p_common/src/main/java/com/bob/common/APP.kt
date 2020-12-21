@@ -1,5 +1,6 @@
-package com.bob.wanandroid
+package com.bob.common
 
+import com.bob.base.BuildConfig
 import com.bob.base.WanBaseApplication
 import com.bob.libutil.util.WanLog
 

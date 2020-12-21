@@ -2,6 +2,7 @@ package com.bob.base
 
 import android.app.Application
 import androidx.lifecycle.ViewModelStore
+import com.elvishew.xlog.XLog
 import dagger.hilt.android.HiltAndroidApp
 
 /**
