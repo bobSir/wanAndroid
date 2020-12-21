@@ -43,6 +43,7 @@ class WanLog {
                 .enableThreadInfo()
                 .enableStackTrace(2)
                 .enableBorder()
+                .borderFormatter(BorderFormatter())
                 .build()
             XLog.init(configuration)
         }
