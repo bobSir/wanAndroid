@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk build_version.compileSdkVersion
+
+    defaultConfig {
+        minSdk build_version.minSdkVersion
+        targetSdk build_version.targetSdkVersion
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api project(':lUtil')
+
+    api lib.appcompat
+    api lib.coreKTX
+    api lib.activityKTX
+    api lib.fragmentKTX
+    api lib.material
+    api lib.lifecycleViewmodel
+    api lib.constraintlayout
+    api lib.swiperefreshlayout
+    api lib.paging
+    api lib.pagingRxjava
+    api(lib.HeaderAndFooterRecyclerView)
+    api(lib.loadmorefooter)
+}
