@@ -40,15 +40,7 @@ public class JavaTest {
 //            }
 //        }
 //        return result;
-        int[] result = new int[0];
-        HashMap<Integer, Integer> integerHashMap = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (integerHashMap.containsKey(nums[i])) {
-                result = new int[]{integerHashMap.get(nums[i]), i};
-            }
-            integerHashMap.put(target - nums[i], i);
-        }
-        return result;
+        @
     }
 
     private void sum(int value) {
