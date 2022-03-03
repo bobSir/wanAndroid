@@ -31,7 +31,6 @@ class WebArticleActivity : BaseActivity() {
 
     override fun initView() {
         initWebView()
-
     }
 
     override fun subscribeUi() {
@@ -39,10 +38,26 @@ class WebArticleActivity : BaseActivity() {
         url?.let { wv.loadUrl(it) }
     }
 
+    override fun onResume() {
+        super.onResume()
+        wv.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        wv.onPause()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView() {
         wv.setBackgroundColor(Color.TRANSPARENT)
+        wv.view.setBackgroundColor(Color.TRANSPARENT)
         wv.overScrollMode = WebView.OVER_SCROLL_NEVER
+        wv.view.overScrollMode = WebView.OVER_SCROLL_NEVER
         val webSetting = wv.settings
         webSetting.allowFileAccess = true
         webSetting.setAppCacheEnabled(true)
@@ -94,6 +109,46 @@ class WebArticleActivity : BaseActivity() {
                 super.onProgressChanged(view, newProgress)
             }
         }
+    }
+
+    private fun canCacheResource(webRequest: WebResourceRequest): Boolean {
+        val url = webRequest.url.toString()
+        val extension = getExtensionFromUrl(url)
+        return extension == "ico" || extension == "bmp" || extension == "gif"
+                || extension == "jpeg" || extension == "jpg" || extension == "png"
+                || extension == "svg" || extension == "webp" || extension == "css"
+                || extension == "js" || extension == "json" || extension == "eot"
+                || extension == "otf" || extension == "ttf" || extension == "woff"
+    }
+
+    private fun cacheResourceRequest(
+        context: Context,
+        webRequest: WebResourceRequest
+    ): WebResourceResponse? {
+//        try {
+//            val url = webRequest.url.toString()
+//            val cachePath = CacheUtils.getCacheDirPath(context, "web_cache")
+//            val filePathName = cachePath + File.separator + url.encodeUtf8().md5().hex()
+//            val file = File(filePathName)
+//            if (!file.exists() || !file.isFile) {
+//                runBlocking {
+//                    download(HttpRequest(url).apply {
+//                        webRequest.requestHeaders.forEach { putHeader(it.key, it.value) }
+//                    }, filePathName)
+//                }
+//            }
+//            if (file.exists() && file.isFile) {
+//                val webResourceResponse = WebResourceResponse()
+//                webResourceResponse.mimeType = getMimeTypeFromUrl(url)
+//                webResourceResponse.encoding = "UTF-8"
+//                webResourceResponse.data = file.inputStream()
+//                webResourceResponse.responseHeaders = mapOf("access-control-allow-origin" to "*")
+//                return webResourceResponse
+//            }
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+        return null
     }
 
     private fun canAssetsResource(webRequest: WebResourceRequest): Boolean {
