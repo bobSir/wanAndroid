@@ -1,7 +1,6 @@
 package com.bob.wanandroid.webArticle.ui
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -48,10 +47,6 @@ class WebArticleActivity : BaseActivity() {
         wv.onPause()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView() {
         wv.setBackgroundColor(Color.TRANSPARENT)
@@ -82,16 +77,6 @@ class WebArticleActivity : BaseActivity() {
             }
 
             override fun shouldInterceptRequest(view: WebView?, request: WebResourceRequest?): WebResourceResponse? {
-//                if (view != null && request != null) {
-//                    when {
-//                        canAssetsResource(request) -> {
-//                            return assetsResourceRequest(view.context, request)
-//                        }
-//                        canCacheResource(request) -> {
-//                            return cacheResourceRequest(view.context, request)
-//                        }
-//                    }
-//                }
                 return super.shouldInterceptRequest(view, request)
             }
 
@@ -109,103 +94,5 @@ class WebArticleActivity : BaseActivity() {
                 super.onProgressChanged(view, newProgress)
             }
         }
-    }
-
-    private fun canCacheResource(webRequest: WebResourceRequest): Boolean {
-        val url = webRequest.url.toString()
-        val extension = getExtensionFromUrl(url)
-        return extension == "ico" || extension == "bmp" || extension == "gif"
-                || extension == "jpeg" || extension == "jpg" || extension == "png"
-                || extension == "svg" || extension == "webp" || extension == "css"
-                || extension == "js" || extension == "json" || extension == "eot"
-                || extension == "otf" || extension == "ttf" || extension == "woff"
-    }
-
-    private fun cacheResourceRequest(
-        context: Context,
-        webRequest: WebResourceRequest
-    ): WebResourceResponse? {
-//        try {
-//            val url = webRequest.url.toString()
-//            val cachePath = CacheUtils.getCacheDirPath(context, "web_cache")
-//            val filePathName = cachePath + File.separator + url.encodeUtf8().md5().hex()
-//            val file = File(filePathName)
-//            if (!file.exists() || !file.isFile) {
-//                runBlocking {
-//                    download(HttpRequest(url).apply {
-//                        webRequest.requestHeaders.forEach { putHeader(it.key, it.value) }
-//                    }, filePathName)
-//                }
-//            }
-//            if (file.exists() && file.isFile) {
-//                val webResourceResponse = WebResourceResponse()
-//                webResourceResponse.mimeType = getMimeTypeFromUrl(url)
-//                webResourceResponse.encoding = "UTF-8"
-//                webResourceResponse.data = file.inputStream()
-//                webResourceResponse.responseHeaders = mapOf("access-control-allow-origin" to "*")
-//                return webResourceResponse
-//            }
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-        return null
-    }
-
-    private fun canAssetsResource(webRequest: WebResourceRequest): Boolean {
-        val url = webRequest.url.toString()
-        return url.startsWith("file:///android_asset/")
-    }
-
-    private fun assetsResourceRequest(
-        context: Context,
-        webRequest: WebResourceRequest
-    ): WebResourceResponse? {
-        try {
-            val url = webRequest.url.toString()
-            val filenameIndex = url.lastIndexOf("/") + 1
-            val filename = url.substring(filenameIndex)
-            val suffixIndex = url.lastIndexOf(".")
-            val suffix = url.substring(suffixIndex + 1)
-            val webResourceResponse = WebResourceResponse()
-            webResourceResponse.mimeType = getMimeTypeFromUrl(url)
-            webResourceResponse.encoding = "UTF-8"
-            webResourceResponse.data = context.assets.open("$suffix/$filename")
-            webResourceResponse.responseHeaders = mapOf("access-control-allow-origin" to "*")
-            return webResourceResponse
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        return null
-    }
-
-    private fun getMimeTypeFromUrl(url: String): String? {
-        try {
-            val extension = getExtensionFromUrl(url)
-            if (extension.isNotBlank() && extension != "null") {
-                if (extension == "json") {
-                    return "application/json"
-                }
-                return MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        return "*/*"
-    }
-
-    private fun getExtensionFromUrl(url: String): String {
-        try {
-            if (url.isNotBlank() && url != "null") {
-                val extension = url
-                    .substringBeforeLast('#') // Strip the fragment.
-                    .substringBeforeLast('?') // Strip the query.
-                    .substringAfterLast('/') // Get the last path segment.
-                    .substringAfterLast('.', missingDelimiterValue = "") // Get the file extension.
-                return MimeTypeMap.getFileExtensionFromUrl(extension)
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        return ""
     }
 }
