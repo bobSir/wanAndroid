@@ -1,5 +1,6 @@
 package com.bob.wanandroid.home.ui.fragment
 
+import android.os.Handler
 import androidx.fragment.app.viewModels
 import com.bob.base.ui.BaseFragment
 import com.bob.common.listloadmore.helper.PagingViewHelper
@@ -28,6 +29,9 @@ class QAFragment : BaseFragment() {
     }
 
     override fun subscribeUi() {
-
+//        viewModel.refresh()
+//        Handler().postDelayed({
+        viewModel.loadCache()
+//        }, 50)
     }
 }

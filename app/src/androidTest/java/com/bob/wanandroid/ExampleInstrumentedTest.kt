@@ -2,6 +2,7 @@ package com.bob.wanandroid
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.viewpager2.widget.ViewPager2
 
 import org.junit.Test
 import org.junit.runner.RunWith

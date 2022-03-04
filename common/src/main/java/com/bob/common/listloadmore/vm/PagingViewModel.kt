@@ -25,6 +25,8 @@ abstract class PagingViewModel<Entity, PagingParams> : ListViewModel<Entity>() {
         }
     }
 
+    abstract fun loadCache()
+
     abstract suspend fun doRefresh()
 
     protected fun refreshSuccess(entities: List<Entity>, pagingParams: PagingParams, isFinished: Boolean) {

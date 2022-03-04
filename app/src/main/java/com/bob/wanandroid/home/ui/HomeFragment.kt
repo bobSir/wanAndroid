@@ -1,6 +1,8 @@
 package com.bob.wanandroid.home.ui
 
+import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.bob.base.ui.BaseFragment
+import com.bob.lutil.log.BobLog
 import com.bob.wanandroid.R
 import com.bob.wanandroid.home.ui.adapter.HomePagerAdapter
 import com.bob.wanandroid.home.ui.fragment.HotArticleFragment
@@ -16,7 +18,7 @@ class HomeFragment : BaseFragment() {
 
     override val layoutId: Int = R.layout.fragment_home
 
-    lateinit var homePagerAdapter: HomePagerAdapter
+    private lateinit var homePagerAdapter: HomePagerAdapter
 
     override fun initView() {
         initViewPager()
@@ -29,8 +31,24 @@ class HomeFragment : BaseFragment() {
         homePagerAdapter = HomePagerAdapter(
             this,
             arrayListOf(HotArticleFragment(), QAFragment())
+//            arrayListOf(QAFragment(), HotArticleFragment())
         )
         home_vp.adapter = homePagerAdapter
+        home_vp.registerOnPageChangeCallback(object : OnPageChangeCallback() {
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+            }
+
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                BobLog.d("@cly", "onPageSelected - $position")
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+                super.onPageScrollStateChanged(state)
+            }
+        })
     }
 
     private fun initTabLayout() {

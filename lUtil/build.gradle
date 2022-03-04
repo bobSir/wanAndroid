@@ -29,5 +29,5 @@ android {
 }
 
 dependencies {
-    api lib.logger
+    implementation lib.logger
 }
