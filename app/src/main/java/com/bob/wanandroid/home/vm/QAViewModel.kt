@@ -12,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 /**
+ * net cache
  * created by cly on 2022/2/7
  */
 class QAViewModel : PagingViewModel<Article, Int>() {
