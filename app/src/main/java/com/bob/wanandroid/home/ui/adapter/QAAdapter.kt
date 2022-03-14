@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -30,12 +32,18 @@ class QAAdapter : ListAdapter<Article, QAAdapter.ViewHolder>(diffCallback) {
         }
     }
 
+    private val itemEventObservable: MutableLiveData<String> = MutableLiveData()
+
+    fun observeItemEvent(): LiveData<String> {
+        return itemEventObservable
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_q_a, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binds(getItem(position))
+        holder.binds(getItem(position), itemEventObservable)
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -48,9 +56,9 @@ class QAAdapter : ListAdapter<Article, QAAdapter.ViewHolder>(diffCallback) {
         private val tvContent: TextView = view.findViewById(R.id.tv_content)
         private val tvTag: TextView = view.findViewById(R.id.tv_tag)
 
-        fun binds(article: Article) {
+        fun binds(article: Article, itemEventObservable: MutableLiveData<String>) {
             rootView.setOnClickListener {
-
+                itemEventObservable.postValue(article.link)
             }
             tvName.text = article.author
             tvTime.text = DateUtils.getRelativeTimeSpanString(article.publishTime)

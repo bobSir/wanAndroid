@@ -7,6 +7,7 @@ import com.bob.common.listloadmore.holder.WanLoadMoreFooter
 import com.bob.wanandroid.R
 import com.bob.wanandroid.home.ui.adapter.QAAdapter
 import com.bob.wanandroid.home.vm.QAViewModel
+import com.bob.wanandroid.webArticle.ui.WebArticleActivity
 import kotlinx.android.synthetic.main.fragment_q_a.*
 
 /**
@@ -25,6 +26,9 @@ class QAFragment : BaseFragment() {
         PagingViewHelper.listen(this, viewModel, refresh_qa, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(rv_qa)
         rv_qa.adapter = adapter
+        adapter.observeItemEvent().observe(this) { link ->
+            WebArticleActivity.launch(requireActivity(), link)
+        }
     }
 
     override fun subscribeUi() {
