@@ -15,7 +15,7 @@ class TopicTabFragment : BaseFragment() {
 
         fun newInstance(title: String): TopicTabFragment {
             val bundle = Bundle()
-            bundle.putString(KEY_TITLE,title)
+            bundle.putString(KEY_TITLE, title)
             val topicTabFragment = TopicTabFragment()
             topicTabFragment.arguments = bundle
             return topicTabFragment
@@ -26,7 +26,6 @@ class TopicTabFragment : BaseFragment() {
 
     override fun initView() {
         val string = arguments?.getString(KEY_TITLE)
-        tv_topic_tab.text = string
     }
 
     override fun subscribeUi() {
