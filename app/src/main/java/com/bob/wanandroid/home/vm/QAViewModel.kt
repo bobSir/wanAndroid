@@ -45,7 +45,12 @@ class QAViewModel : PagingViewModel<Article, Int>() {
 
     override suspend fun doLoadMore(version: Int, pagingParams: Int) {
         when (val result = qaRepository.query(pagingParams)) {
-            is RespResult.Success -> loadMoreSuccess(version, result.data.datas, pagingParams + 1, false)
+            is RespResult.Success -> {
+                loadMoreSuccess(
+                    version, result.data.datas, pagingParams + 1,
+                    result.data.datas.isEmpty()
+                )
+            }
             is RespResult.Failure -> loadMoreFailure(version)
             is RespResult.NetError -> loadMoreFailure(version)
         }

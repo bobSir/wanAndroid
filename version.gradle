@@ -41,7 +41,10 @@ lib.retrofitGson = 'com.squareup.retrofit2:converter-gson:2.7.0'
 lib.okHttpLogging = 'com.squareup.okhttp3:logging-interceptor:4.3.0'
 lib.diskLruCache = 'com.jakewharton:disklrucache:2.0.2'
 lib.gson = 'com.google.code.gson:gson:2.8.5'
+lib.x5 = 'com.tencent.tbs.tbssdk:sdk:43993'
+//封装pagingModule，实现分页，限定了列表对应的实体
 lib.HeaderAndFooterRecyclerView = 'com.github.TakWolf.Android-HeaderAndFooterRecyclerView:hfrecyclerview:0.0.2'
 lib.loadmorefooter = 'com.github.TakWolf.Android-HeaderAndFooterRecyclerView:loadmorefooter:0.0.2'
-lib.x5 = 'com.tencent.tbs.tbssdk:sdk:43993'
+//adapter拓展实现分页
+lib.baseQuickAdapter = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 ext.lib = lib

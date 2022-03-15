@@ -34,5 +34,8 @@ public class ExampleJavaTest {
                 super.onPageScrollStateChanged(state);
             }
         });
+
+        for(int i=0;i<10;i++){
+        }
     }
 }

@@ -40,4 +40,5 @@ dependencies {
     implementation lib.roomKtx
     implementation lib.diskLruCache
     implementation lib.gson
+    implementation lib.baseQuickAdapter
 }
