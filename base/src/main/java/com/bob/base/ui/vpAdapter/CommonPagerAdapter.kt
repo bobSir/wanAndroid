@@ -10,6 +10,7 @@ class CommonPagerAdapter(
     fragment: Fragment,
     private val fragments: List<Fragment>
 ) : FragmentStateAdapter(fragment) {
+
     override fun getItemCount(): Int = fragments.size
 
     override fun createFragment(position: Int): Fragment {

@@ -31,25 +31,6 @@ class TopicFragment : BaseFragment() {
         TabLayoutMediator(tab_topic, vp_topic) { tab, position ->
             tab.text = title[position]
         }.attach()
-        //fix tabLayout划出一屏选中抖动问题
-//        vp_topic.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-//            var isTouchState = false
-//
-//            override fun onPageScrollStateChanged(state: Int) {
-//                super.onPageScrollStateChanged(state)
-//                if (state == ViewPager2.SCROLL_STATE_DRAGGING) {
-//                    isTouchState = true
-//                } else if (state == ViewPager2.SCROLL_STATE_IDLE) {
-//                    isTouchState = false
-//                }
-//            }
-//
-//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-//                if (isTouchState) {
-//                    super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-//                }
-//            }
-//        })
     }
 
     @SuppressLint("NotifyDataSetChanged")
