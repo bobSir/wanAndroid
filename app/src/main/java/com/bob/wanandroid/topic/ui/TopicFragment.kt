@@ -4,11 +4,10 @@ import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bob.base.ui.BaseFragment
-import com.bob.base.ui.vpAdapter.CommonPagerAdapter
 import com.bob.common.ext.observe
 import com.bob.wanandroid.R
+import com.bob.wanandroid.topic.ui.adapter.TopicPagerAdapter
 import com.bob.wanandroid.topic.vm.TopicViewModel
-import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_topic.*
 
 
@@ -17,31 +16,28 @@ import kotlinx.android.synthetic.main.fragment_topic.*
  */
 class TopicFragment : BaseFragment() {
 
-    private val title = arrayListOf<String>()
-    private val fragments = arrayListOf<Fragment>()
-
     private val topicViewModel: TopicViewModel by viewModels()
-    private lateinit var adapter: CommonPagerAdapter
+    private lateinit var adapter: TopicPagerAdapter
 
     override val layoutId: Int = R.layout.fragment_topic
 
     override fun initView() {
-        adapter = CommonPagerAdapter(this, fragments)
+        tab_topic.setupWithViewPager(vp_topic)
+        adapter = TopicPagerAdapter(childFragmentManager)
         vp_topic.adapter = adapter
-        TabLayoutMediator(tab_topic, vp_topic) { tab, position ->
-            tab.text = title[position]
-        }.attach()
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun subscribeUi() {
         topicViewModel.fetchChapters()
         observe(topicViewModel.chapters) { chapters ->
+            val titles = arrayListOf<String>()
+            val fragments = arrayListOf<Fragment>()
             chapters.forEach {
-                title.add(it.name)
+                titles.add(it.name)
                 fragments.add(TopicTabFragment.newInstance(it.id))
             }
-            adapter.notifyDataSetChanged()
+            adapter.setData(fragments, titles)
         }
     }
 }
