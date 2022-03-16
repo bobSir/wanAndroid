@@ -11,6 +11,7 @@ import com.bob.base.vm.BaseViewModel
 import com.bob.wanandroid.home.repository.HomeLocalDataSource
 import com.bob.wanandroid.home.repository.HomeRemoteDataSource
 import com.bob.wanandroid.home.repository.HomeRepository
+import com.bob.wanandroid.home.ui.bean.UiModel
 import kotlinx.coroutines.flow.map
 
 /**

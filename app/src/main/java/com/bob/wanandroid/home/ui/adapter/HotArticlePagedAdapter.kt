@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bob.lnetwork.entity.Article
 import com.bob.wanandroid.R
-import com.bob.wanandroid.home.vm.UiModel
+import com.bob.wanandroid.home.ui.bean.UiModel
 
 /**
  * created by cly on 2022/1/26

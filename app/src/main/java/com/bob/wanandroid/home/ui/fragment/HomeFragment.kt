@@ -1,4 +1,4 @@
-package com.bob.wanandroid.home.ui
+package com.bob.wanandroid.home.ui.fragment
 
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.bob.base.ui.BaseFragment

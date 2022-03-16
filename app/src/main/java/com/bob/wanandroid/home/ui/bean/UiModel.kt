@@ -1,4 +1,4 @@
-package com.bob.wanandroid.home.vm
+package com.bob.wanandroid.home.ui.bean
 
 import com.bob.lnetwork.entity.Article
 
