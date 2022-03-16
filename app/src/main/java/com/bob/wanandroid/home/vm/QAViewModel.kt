@@ -4,7 +4,6 @@ import androidx.lifecycle.viewModelScope
 import com.bob.common.listloadmore.vm.PagingViewModel
 import com.bob.lnetwork.entity.Article
 import com.bob.lnetwork.entity.base.RespResult
-import com.bob.lutil.log.BobLog
 import com.bob.wanandroid.home.repository.QALocalDataSource
 import com.bob.wanandroid.home.repository.QARemoteDataSource
 import com.bob.wanandroid.home.repository.QARepository
@@ -25,11 +24,8 @@ class QAViewModel : PagingViewModel<Article, Int>() {
 
     override fun loadCache() {
         viewModelScope.launch(Dispatchers.IO) {
-            BobLog.d("@cly", 0)
             val cacheResult = qaRepository.queryCache()
-            BobLog.d("@cly", 2)
             if (cacheResult?.isNotEmpty() == true) {
-                BobLog.d("@cly", 3)
                 refreshSuccess(cacheResult, 1, false)
             }
         }

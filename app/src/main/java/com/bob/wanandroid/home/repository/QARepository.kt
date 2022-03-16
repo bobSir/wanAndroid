@@ -47,7 +47,6 @@ class QALocalDataSource : ILocalDataSource {
     private val KEY = "qa_list_datas"
 
     fun fetchQAList(): List<Article>? {
-        BobLog.d("@cly", 1)
         return WanDiskCache.getInstance().get<List<Article>>(KEY)
     }
 

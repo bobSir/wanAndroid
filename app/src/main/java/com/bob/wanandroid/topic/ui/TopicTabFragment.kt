@@ -26,7 +26,6 @@ class TopicTabFragment : BaseFragment() {
 
     override fun initView() {
         val id = arguments?.getInt(KEY_TITLE)
-        BobLog.d(id)
     }
 
     override fun subscribeUi() {

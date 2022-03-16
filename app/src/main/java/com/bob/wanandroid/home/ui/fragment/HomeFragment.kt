@@ -2,11 +2,8 @@ package com.bob.wanandroid.home.ui.fragment
 
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.bob.base.ui.BaseFragment
-import com.bob.lutil.log.BobLog
 import com.bob.wanandroid.R
 import com.bob.wanandroid.home.ui.adapter.HomePagerAdapter
-import com.bob.wanandroid.home.ui.fragment.HotArticleFragment
-import com.bob.wanandroid.home.ui.fragment.QAFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -42,7 +39,6 @@ class HomeFragment : BaseFragment() {
 
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                BobLog.d("@cly", "onPageSelected - $position")
             }
 
             override fun onPageScrollStateChanged(state: Int) {
