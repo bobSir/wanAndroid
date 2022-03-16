@@ -1,10 +1,8 @@
 package com.bob.wanandroid.topic.ui
 
 import android.annotation.SuppressLint
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.viewpager2.widget.ViewPager2
 import com.bob.base.ui.BaseFragment
 import com.bob.base.ui.vpAdapter.CommonPagerAdapter
 import com.bob.common.ext.observe
@@ -12,6 +10,7 @@ import com.bob.wanandroid.R
 import com.bob.wanandroid.topic.vm.TopicViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_topic.*
+
 
 /**
  * created by cly on 2022/1/25
@@ -33,7 +32,6 @@ class TopicFragment : BaseFragment() {
             tab.text = title[position]
         }.attach()
         //fix tabLayout划出一屏选中抖动问题
-
 //        vp_topic.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
 //            var isTouchState = false
 //
