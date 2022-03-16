@@ -43,4 +43,5 @@ dependencies {
     api lib.pagingRxjava
     api(lib.HeaderAndFooterRecyclerView)
     api(lib.loadmorefooter)
+    api lib.baseQuickAdapter
 }

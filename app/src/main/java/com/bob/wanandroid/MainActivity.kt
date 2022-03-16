@@ -3,7 +3,7 @@ package com.bob.wanandroid
 import com.bob.base.ui.BaseActivity
 import com.bob.wanandroid.home.ui.fragment.HomeFragment
 import com.bob.wanandroid.navigation.ui.NavigationFragment
-import com.bob.wanandroid.topic.ui.TopicFragment
+import com.bob.wanandroid.topic.ui.fragment.TopicFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {

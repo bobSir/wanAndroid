@@ -1,5 +1,6 @@
 package com.bob.base.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,11 +22,18 @@ abstract class BaseFragment : Fragment() {
         return inflater.inflate(layoutId, container, false)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        initParams()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
         subscribeUi()
     }
+
+    open fun initParams() {}
 
     open fun initView() {}
 

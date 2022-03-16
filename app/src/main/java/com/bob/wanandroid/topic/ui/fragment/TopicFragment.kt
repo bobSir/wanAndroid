@@ -1,4 +1,4 @@
-package com.bob.wanandroid.topic.ui
+package com.bob.wanandroid.topic.ui.fragment
 
 import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
