@@ -9,6 +9,7 @@ import com.bob.lnetwork.entity.base.RespResult
 import com.bob.wanandroid.topic.repository.TopicLocalRepository
 import com.bob.wanandroid.topic.repository.TopicRemoteRepository
 import com.bob.wanandroid.topic.repository.TopicRepository
+import com.bob.wanandroid.topic.ui.fragment.TopicTabFragment
 import kotlinx.coroutines.launch
 
 /**
@@ -28,12 +29,11 @@ class TopicViewModel : BaseViewModel() {
         }
     }
 
-    fun fetchChapterArticle(id: Int) {
+    fun fetchChapterArticle(id: Int, pageIndex: Int) {
         viewModelScope.launch {
-            when (val result = repository.fetchChapterArticles(id, 0)) {
+            when (val result = repository.fetchChapterArticles(id, pageIndex)) {
                 is RespResult.Success -> articles.value = result.data.datas
             }
         }
     }
-
 }

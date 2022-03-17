@@ -20,7 +20,7 @@ class MainActivity : BaseActivity() {
             this,
             listOf(HomeFragment(), TopicFragment(), NavigationFragment())
         )
-        vp_container.offscreenPageLimit = 2
+//        vp_container.offscreenPageLimit = 2
         vp_container.isUserInputEnabled = false
     }
 
