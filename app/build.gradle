@@ -5,6 +5,8 @@ plugins {
     id "kotlin-kapt"
 }
 
+apply plugin: 'com.didi.dokit'
+
 android {
     compileSdk build_version.compileSdkVersion
 
@@ -33,10 +35,27 @@ android {
     }
 }
 
+//dokitExt {
+//    //通用设置
+//    comm {
+//        //地图经纬度开关
+//        gpsSwitch false
+//        //网络开关
+//        networkSwitch true
+//        //大图开关
+//        bigImgSwitch false
+//        //webView js 抓包
+//        webViewSwitch false
+//    }
+//}
+
 dependencies {
     implementation project(':common')
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    debugImplementation "io.github.didi.dokit:dokitx:3.5.0"
+    releaseImplementation "io.github.didi.dokit:dokitx-no-op:3.5.0"
 }

@@ -3,6 +3,7 @@ package com.bob.wanandroid
 import android.app.Application
 import com.bob.common.util.ContextUtil
 import com.bob.lutil.log.BobLog
+import com.didichuxing.doraemonkit.DoKit
 import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
 
@@ -20,6 +21,13 @@ class WanApplication : Application() {
         BobLog.init()
         ContextUtil.init(this)
         initX5()
+        initDokit()
+    }
+
+    private fun initDokit() {
+        DoKit.Builder(this)
+            .productId("需要使用平台功能的话，需要到dokit.cn平台申请id")
+            .build()
     }
 
     private fun initX5() {
