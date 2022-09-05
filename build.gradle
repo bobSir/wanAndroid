@@ -3,13 +3,18 @@ buildscript {
     apply from: 'version.gradle'
     repositories {
         google()
-        mavenCentral()
+        jcenter()
         maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
         classpath 'io.github.didi.dokit:dokitx-plugin:3.5.0'
+        //tinker
+        classpath("com.tencent.tinker:tinker-patch-gradle-plugin:1.9.14.23") {
+            changing = false
+            exclude group: 'com.android.tools.build', module: 'gradle'
+        }
     }
 }
 
